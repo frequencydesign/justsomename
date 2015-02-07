@@ -4,11 +4,11 @@ var request = require("superagent");
 var Link = require("react-router").Link;
 
 var store = Reflux.createStore({
-    data: {charts: []},
+    data: {jokes: []},
 
     init(){
-        request("http://192.168.0.3/api/user/1/chart", res => {
-            this.data.charts = res.body;
+        request("http://api.icndb.com/jokes/random/5", res => {
+            this.data.jokes = res.body.value;
             this.trigger(this.data);
         })
     },
@@ -23,11 +23,13 @@ var DisplayName = React.createClass({
     render:function(){
         return (
             <div>
-            {this.state.charts.map(entry => {
+            {this.state.jokes.map(entry => {
                 return (
-                    <div>
-                        {entry.label}
-                    </div>
+                    <ul>
+                        <li key={entry.id}>
+                            {entry.joke}
+                        </li>
+                    </ul>
                 )
             })}
                 <p>Or try to switch to <Link to="home">Home page</Link>.</p>

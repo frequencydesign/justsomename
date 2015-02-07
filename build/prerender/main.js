@@ -47,11 +47,11 @@ module.exports =
 
 	var async = __webpack_require__(3);
 	var React = __webpack_require__(1);
-	var Router = __webpack_require__(9);
+	var Router = __webpack_require__(8);
 	var ItemsStore = __webpack_require__(6);
 	var routes = __webpack_require__(4);
 	var storesDescriptions = __webpack_require__(5);
-	var html = __webpack_require__(8);
+	var html = __webpack_require__(9);
 
 	// create stores for prerending
 	// readItems contains async methods for fetching the data from database
@@ -121,7 +121,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var Router = __webpack_require__(9);
+	var Router = __webpack_require__(8);
 	var Route = Router.Route;
 	var DefaultRoute = Router.DefaultRoute;
 
@@ -957,12 +957,6 @@ module.exports =
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\">\n\t<link rel=\"stylesheet\" href=\"STYLE_URL\">\n</head>\n<body>\n\t<script>\n\t\tvar __StoreData = DATA;\n\t</script>\n\t<div id=\"content\">CONTENT</div>\n\t<script src=\"SCRIPT_URL\"></script>\n</body>\n</html>";
-
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
 	exports.DefaultRoute = __webpack_require__(17);
 	exports.Link = __webpack_require__(18);
 	exports.NotFoundRoute = __webpack_require__(19);
@@ -987,12 +981,18 @@ module.exports =
 
 
 /***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\">\n\t<link rel=\"stylesheet\" href=\"STYLE_URL\">\n</head>\n<body>\n\t<script>\n\t\tvar __StoreData = DATA;\n\t</script>\n\t<div id=\"content\">CONTENT</div>\n\t<script src=\"SCRIPT_URL\"></script>\n</body>\n</html>";
+
+/***/ },
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	var StateFromStoreMixin = __webpack_require__(33);
-	var RouteHandler = __webpack_require__(9).RouteHandler;
+	var RouteHandler = __webpack_require__(8).RouteHandler;
 
 	__webpack_require__(54);
 
@@ -1009,8 +1009,6 @@ module.exports =
 		render: function() {
 			return React.createElement("div", {className: this.state.loading ? "application loading" : "application"}, 
 				this.state.loading ? React.createElement("div", {style: {float: "right"}}, "loading...") : null, 
-				React.createElement("h1", null, "react-starter"), 
-				React.createElement("button", {onClick: this.update}, "Update data"), 
 				React.createElement(RouteHandler, null)
 			);
 		},
@@ -1055,8 +1053,8 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var State = __webpack_require__(9).State;
-	var Link = __webpack_require__(9).Link;
+	var State = __webpack_require__(8).State;
+	var Link = __webpack_require__(8).Link;
 	var StateFromStoreMixin = __webpack_require__(33);
 	var Todo = __webpack_require__(34).Todo;
 
@@ -1135,8 +1133,8 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var State = __webpack_require__(9).State;
-	var Link = __webpack_require__(9).Link;
+	var State = __webpack_require__(8).State;
+	var Link = __webpack_require__(8).Link;
 	var StateFromStoreMixin = __webpack_require__(33);
 	var Todo = __webpack_require__(34).Todo;
 
@@ -1191,7 +1189,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var Link = __webpack_require__(9).Link;
+	var Link = __webpack_require__(8).Link;
 
 	module.exports = React.createClass({displayName: "exports",
 		render: function() {
@@ -1244,8 +1242,8 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var FakeNode = __webpack_require__(41);
-	var PropTypes = __webpack_require__(42);
+	var FakeNode = __webpack_require__(40);
+	var PropTypes = __webpack_require__(41);
 
 	/**
 	 * A <DefaultRoute> component is a special kind of <Route> that
@@ -1388,8 +1386,8 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var FakeNode = __webpack_require__(41);
-	var PropTypes = __webpack_require__(42);
+	var FakeNode = __webpack_require__(40);
+	var PropTypes = __webpack_require__(41);
 
 	/**
 	 * A <NotFoundRoute> is a special kind of <Route> that
@@ -1420,8 +1418,8 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var FakeNode = __webpack_require__(41);
-	var PropTypes = __webpack_require__(42);
+	var FakeNode = __webpack_require__(40);
+	var PropTypes = __webpack_require__(41);
 
 	/**
 	 * A <Redirect> component is a special kind of <Route> that always
@@ -1450,7 +1448,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var FakeNode = __webpack_require__(41);
+	var FakeNode = __webpack_require__(40);
 
 	/**
 	 * <Route> components specify components that are rendered to the page when the
@@ -1513,7 +1511,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var RouteHandlerMixin = __webpack_require__(43);
+	var RouteHandlerMixin = __webpack_require__(42);
 
 	/**
 	 * A <RouteHandler> component renders the active child route handler
@@ -1544,7 +1542,7 @@ module.exports =
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var LocationActions = __webpack_require__(45);
+	var LocationActions = __webpack_require__(43);
 	var History = __webpack_require__(32);
 	var Path = __webpack_require__(44);
 
@@ -1675,7 +1673,7 @@ module.exports =
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var LocationActions = __webpack_require__(45);
+	var LocationActions = __webpack_require__(43);
 	var History = __webpack_require__(32);
 	var Path = __webpack_require__(44);
 
@@ -1811,7 +1809,7 @@ module.exports =
 /* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var LocationActions = __webpack_require__(45);
+	var LocationActions = __webpack_require__(43);
 
 	/**
 	 * A scroll behavior that attempts to imitate the default behavior
@@ -2026,25 +2024,25 @@ module.exports =
 
 	/* jshint -W058 */
 	var React = __webpack_require__(1);
-	var warning = __webpack_require__(39);
-	var invariant = __webpack_require__(37);
-	var canUseDOM = __webpack_require__(38).canUseDOM;
+	var warning = __webpack_require__(37);
+	var invariant = __webpack_require__(38);
+	var canUseDOM = __webpack_require__(39).canUseDOM;
 	var ImitateBrowserBehavior = __webpack_require__(26);
 	var RouteHandler = __webpack_require__(22);
-	var LocationActions = __webpack_require__(45);
+	var LocationActions = __webpack_require__(43);
 	var HashLocation = __webpack_require__(23);
 	var HistoryLocation = __webpack_require__(24);
 	var RefreshLocation = __webpack_require__(25);
-	var NavigationContext = __webpack_require__(46);
-	var StateContext = __webpack_require__(47);
-	var Scrolling = __webpack_require__(48);
-	var createRoutesFromChildren = __webpack_require__(49);
-	var supportsHistory = __webpack_require__(50);
-	var Transition = __webpack_require__(51);
-	var PropTypes = __webpack_require__(42);
-	var Redirect = __webpack_require__(52);
+	var NavigationContext = __webpack_require__(45);
+	var StateContext = __webpack_require__(46);
+	var Scrolling = __webpack_require__(47);
+	var createRoutesFromChildren = __webpack_require__(48);
+	var supportsHistory = __webpack_require__(49);
+	var Transition = __webpack_require__(50);
+	var PropTypes = __webpack_require__(41);
+	var Redirect = __webpack_require__(51);
 	var History = __webpack_require__(32);
-	var Cancellation = __webpack_require__(53);
+	var Cancellation = __webpack_require__(52);
 	var Path = __webpack_require__(44);
 
 	/**
@@ -2578,8 +2576,8 @@ module.exports =
 /* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var invariant = __webpack_require__(37);
-	var canUseDOM = __webpack_require__(38).canUseDOM;
+	var invariant = __webpack_require__(38);
+	var canUseDOM = __webpack_require__(39).canUseDOM;
 
 	var History = {
 
@@ -2620,7 +2618,7 @@ module.exports =
 	var React = __webpack_require__(1);
 	var ItemsStoreLease = __webpack_require__(55);
 	var ItemsStoreFetcher = __webpack_require__(56);
-	var ReactUpdates = __webpack_require__(40);
+	var ReactUpdates = __webpack_require__(53);
 
 	function makeStores(stores, addDepenency) {
 		if(!addDepenency) {
@@ -2724,31 +2722,25 @@ module.exports =
 /* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = require("react/lib/invariant");
+	module.exports = require("react/lib/warning");
 
 /***/ },
 /* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = require("react/lib/ExecutionEnvironment");
+	module.exports = require("react/lib/invariant");
 
 /***/ },
 /* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = require("react/lib/warning");
+	module.exports = require("react/lib/ExecutionEnvironment");
 
 /***/ },
 /* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = require("react/lib/ReactUpdates");
-
-/***/ },
-/* 41 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var invariant = __webpack_require__(37);
+	var invariant = __webpack_require__(38);
 
 	var FakeNode = {
 
@@ -2766,7 +2758,7 @@ module.exports =
 
 
 /***/ },
-/* 42 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var PropTypes = {
@@ -2785,7 +2777,7 @@ module.exports =
 
 
 /***/ },
-/* 43 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -2832,10 +2824,39 @@ module.exports =
 	};
 
 /***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Actions that modify the URL.
+	 */
+	var LocationActions = {
+
+	  /**
+	   * Indicates a new location is being pushed to the history stack.
+	   */
+	  PUSH: 'push',
+
+	  /**
+	   * Indicates the current location should be replaced.
+	   */
+	  REPLACE: 'replace',
+
+	  /**
+	   * Indicates the most recent entry should be removed from the history stack.
+	   */
+	  POP: 'pop'
+
+	};
+
+	module.exports = LocationActions;
+
+
+/***/ },
 /* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var invariant = __webpack_require__(37);
+	var invariant = __webpack_require__(38);
 	var merge = __webpack_require__(62).merge;
 	var qs = __webpack_require__(63);
 
@@ -3019,35 +3040,6 @@ module.exports =
 /* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Actions that modify the URL.
-	 */
-	var LocationActions = {
-
-	  /**
-	   * Indicates a new location is being pushed to the history stack.
-	   */
-	  PUSH: 'push',
-
-	  /**
-	   * Indicates the current location should be replaced.
-	   */
-	  REPLACE: 'replace',
-
-	  /**
-	   * Indicates the most recent entry should be removed from the history stack.
-	   */
-	  POP: 'pop'
-
-	};
-
-	module.exports = LocationActions;
-
-
-/***/ },
-/* 46 */
-/***/ function(module, exports, __webpack_require__) {
-
 	var React = __webpack_require__(1);
 
 	/**
@@ -3079,7 +3071,7 @@ module.exports =
 
 
 /***/ },
-/* 47 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -3186,11 +3178,11 @@ module.exports =
 
 
 /***/ },
-/* 48 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var invariant = __webpack_require__(37);
-	var canUseDOM = __webpack_require__(38).canUseDOM;
+	var invariant = __webpack_require__(38);
+	var canUseDOM = __webpack_require__(39).canUseDOM;
 	var getWindowScrollPosition = __webpack_require__(58);
 
 	function shouldUpdateScroll(state, prevState) {
@@ -3275,13 +3267,13 @@ module.exports =
 
 
 /***/ },
-/* 49 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* jshint -W084 */
 	var React = __webpack_require__(1);
-	var warning = __webpack_require__(39);
-	var invariant = __webpack_require__(37);
+	var warning = __webpack_require__(37);
+	var invariant = __webpack_require__(38);
 	var DefaultRoute = __webpack_require__(17);
 	var NotFoundRoute = __webpack_require__(19);
 	var Redirect = __webpack_require__(20);
@@ -3446,7 +3438,7 @@ module.exports =
 
 
 /***/ },
-/* 50 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	function supportsHistory() {
@@ -3470,12 +3462,12 @@ module.exports =
 
 
 /***/ },
-/* 51 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var assign = __webpack_require__(36);
 	var reversedArray = __webpack_require__(59);
-	var Redirect = __webpack_require__(52);
+	var Redirect = __webpack_require__(51);
 	var Promise = __webpack_require__(60);
 
 	/**
@@ -3605,7 +3597,7 @@ module.exports =
 
 
 /***/ },
-/* 52 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3621,7 +3613,7 @@ module.exports =
 
 
 /***/ },
-/* 53 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3632,6 +3624,12 @@ module.exports =
 
 	module.exports = Cancellation;
 
+
+/***/ },
+/* 53 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = require("react/lib/ReactUpdates");
 
 /***/ },
 /* 54 */
@@ -3772,8 +3770,8 @@ module.exports =
 /* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var invariant = __webpack_require__(37);
-	var canUseDOM = __webpack_require__(38).canUseDOM;
+	var invariant = __webpack_require__(38);
+	var canUseDOM = __webpack_require__(39).canUseDOM;
 
 	/**
 	 * Returns the current scroll position of the window as { x, y }.
